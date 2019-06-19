@@ -5,8 +5,6 @@
  */
 package src.negocio;
 
-import brain.geral.Arquivo;
-
 /**
  *
  * @author arthur.siqueira
