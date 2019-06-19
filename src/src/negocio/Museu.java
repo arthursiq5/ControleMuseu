@@ -27,6 +27,15 @@ public class Museu {
         this.valorArrecadado = 0;
         this.lotacaoAtual = 0;
     }
+    public Museu(String nomeDoMuseu, int contRoletaNorte, int contRoletaSul) {
+        this.nomeDoMuseu = nomeDoMuseu;
+        
+        // TODO modificar classe para puxar dados do arquivo salvo
+        this.roletaNorte = new Roleta(contRoletaNorte);
+        this.roletaSul = new Roleta(contRoletaSul);
+        this.valorArrecadado = 0;
+        this.lotacaoAtual = 0;
+    }
     
     private void atualizaLotacao(){
         this.lotacaoAtual = this.roletaNorte.getContadorDiario() 
