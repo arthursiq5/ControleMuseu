@@ -14,5 +14,5 @@ import src.negocio.Museu;
 public interface MuseuDao {
     public void criaBase(String nomeDoMuseu);
     public Museu buildMuseu(String nomeDoMuseu);
-    public boolean saveData(Museu museu);
+    public void saveData(Museu museu);
 }
