@@ -79,5 +79,10 @@ public class Museu {
         return this.valorArrecadado;
     }
     
-    
+    public int getContInfRoletaNorte(){
+        return this.roletaNorte.getContadorInfinito();
+    }
+    public int getContInfRoletaSul(){
+        return this.roletaSul.getContadorInfinito();
+    }
 }
