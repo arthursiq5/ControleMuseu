@@ -1,2 +1,4 @@
 *.let
 *.DS_Store
+/build/
+/?
