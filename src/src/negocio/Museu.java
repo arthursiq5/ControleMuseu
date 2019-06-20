@@ -53,7 +53,7 @@ public class Museu {
     public void entrarRoletaNorte(){
         if(!this.verificaLotacao()) 
             throw new IllegalStateException("Lotação máxima atingida");
-        this.valorArrecadado += 34;
+        this.valorArrecadado += Constantes.VALOR_TARIFA.getValor();
         this.roletaNorte.entrar();
         this.atualizaLotacao();
     }
@@ -65,7 +65,7 @@ public class Museu {
     public void entrarRoletaSul(){
         if(!this.verificaLotacao()) 
             throw new IllegalStateException("Lotação máxima atingida");
-        this.valorArrecadado += 34;
+        this.valorArrecadado += Constantes.VALOR_TARIFA.getValor();
         this.roletaSul.entrar();
         this.atualizaLotacao();
     }

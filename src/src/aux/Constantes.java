@@ -10,7 +10,8 @@ package src.aux;
  * @author arthur.siqueira
  */
 public enum Constantes {
-    LOTACAO_MAXIMA(2000);
+    LOTACAO_MAXIMA(2000),
+    VALOR_TARIFA(34);
     
     private final int valor;
 
