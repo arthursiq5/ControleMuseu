@@ -38,14 +38,20 @@ public class MuseuDaoTxt implements MuseuDao{
     @Override
     public Museu buildMuseu(String nomeDoMuseu) {
         this.initArquivos(nomeDoMuseu);
-        this.fechaArquivos();
-        if(this.roletaNorte.abrirLeitura()&&
-           this.roletaSul.abrirLeitura()){
-            return new Museu(nomeDoMuseu, 
+        try {
+            this.fechaArquivos();
+            if(this.roletaNorte.abrirLeitura()&&
+               this.roletaSul.abrirLeitura()){
+                return new Museu(nomeDoMuseu, 
                     (Integer.parseInt(this.roletaNorte.lerLinha())), 
                     (Integer.parseInt(this.roletaSul.lerLinha()))
-            );
-        }else{
+                );
+            }else{
+                this.roletaNorte.abrirEscrita();
+                this.roletaSul.abrirEscrita();
+                return new Museu(nomeDoMuseu);
+            }
+        } catch (NumberFormatException e) {
             return new Museu(nomeDoMuseu);
         }
     }
@@ -56,7 +62,8 @@ public class MuseuDaoTxt implements MuseuDao{
         this.roletaNorte.abrirEscrita();
         this.roletaNorte.escreverLinha(museu.getContInfRoletaNorte() + "");
         this.roletaSul.abrirEscrita();
-        this.roletaSul.escreverLinha(museu.getContInfRoletaSul()+ "");
+        this.roletaSul.escreverLinha("" + museu.getContInfRoletaSul());
+        this.fechaArquivos();
     }
     
 }

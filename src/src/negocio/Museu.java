@@ -85,4 +85,8 @@ public class Museu {
     public int getContInfRoletaSul(){
         return this.roletaSul.getContadorInfinito();
     }
+    
+    public int getLotacaoAtual(){
+        return this.lotacaoAtual;
+    }
 }
